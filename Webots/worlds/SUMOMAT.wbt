@@ -1,0 +1,281 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.12151226360437907 0.13235868764464315 0.9837255448542179 1.5014241185979957
+  position -0.3449807564356749 -0.8908820086397707 0.42325735781235546
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 1.5 1.5
+}
+Solid {
+  translation 0 0 0.005
+  children [
+    Solid {
+      translation 0 -0.05 0.00123
+      children [
+        DEF RedBox2 Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0
+            }
+          }
+          geometry Box {
+            size 0.1 0.015 0.02
+          }
+        }
+      ]
+      name "RedBox2"
+      boundingObject USE RedBox2
+    }
+    Solid {
+      translation 0 0.05 0.00123
+      children [
+        DEF RedBox1 Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0
+            }
+          }
+          geometry Box {
+            size 0.1 0.015 0.02
+          }
+        }
+      ]
+      name "RedBox1"
+      boundingObject USE RedBox1
+    }
+    Solid {
+      translation 0 0 0.0012
+      children [
+        DEF SumoCircleShape Shape {
+          appearance Appearance {
+            material Material {
+            }
+          }
+          geometry Cylinder {
+            height 0.02
+            radius 0.42
+          }
+        }
+      ]
+      name "SumoCircle"
+      boundingObject USE SumoCircleShape
+    }
+    Solid {
+      translation 0 0 0.001
+      children [
+        DEF SumoRingShape Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0
+            }
+          }
+          geometry Cylinder {
+            height 0.02
+            radius 0.4572
+          }
+        }
+      ]
+      name "SumoRing"
+      boundingObject USE SumoRingShape
+    }
+    DEF Sumo_border Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.8 0.2
+        }
+      }
+      geometry Box {
+        size 0.9652 0.9652 0.02
+      }
+    }
+  ]
+  name "sumosquare"
+  boundingObject USE Sumo_border
+}
+Robot {
+  translation -0.000624601 -0.00312021 0.06
+  children [
+    DEF RoboBody Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.08 0.05 0.02
+      }
+    }
+    Camera {
+      translation 0.045 0 0
+      rotation 0 1 0 1.5708
+      children [
+        DEF camera_body Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0.5 0.8
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      boundingObject USE camera_body
+      physics Physics {
+      }
+      lens Lens {
+      }
+      focus Focus {
+      }
+      zoom Zoom {
+      }
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 -0.03 -0.005
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.02999999999999997 -0.03 -0.005
+        rotation 1 0 0 1.570799999327809
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 0.4 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.01
+            }
+          }
+        ]
+        name "Wheel1"
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 0.03 -0.005
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 0.03 -0.005
+        rotation 1 0 0 1.5707996938995747
+        children [
+          USE Wheel
+        ]
+        name "Wheel2"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 -0.03 -0.005
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 -0.03 -0.005
+        rotation 1 0 0 1.570799996426685
+        children [
+          USE Wheel
+        ]
+        name "Wheel3"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 0.03 -0.005
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 0.03 -0.005
+        rotation 1 0 0 1.5708000012931407
+        children [
+          USE Wheel
+        ]
+        name "Wheel4"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+  ]
+  boundingObject USE RoboBody
+  physics Physics {
+  }
+  controller "sumoRobot"
+}
+DEF Grichnicks_box Solid {
+  translation -0.259647 0.145728 0.16
+  children [
+    DEF upper_box Solid {
+      translation 0 0 0.04
+      children [
+        DEF Box_bottom Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0.6 0.5
+            }
+          }
+          geometry Box {
+            size 0.075 0.075 0.007
+          }
+        }
+      ]
+    }
+    DEF Below_hole Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.8 0.6 0.5
+        }
+      }
+      geometry Box {
+        size 0.075 0.075 0.056
+      }
+    }
+  ]
+  boundingObject USE Box_bottom
+  physics Physics {
+  }
+}

@@ -1,0 +1,903 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.3759231026998668 -0.12321006606724881 -0.9184231598104491 3.7264787668820962
+  position 2.189970537317454 -1.6300099474252816 2.409103233047192
+  follow "gentle giant"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 1.5 1.5
+  floorTileSize 0.25 0.25
+  wallHeight 0.05
+}
+Solid {
+  translation 0.357835 0.363374 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.2 1
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "pink cube"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation 0.421036 -0.396883 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.7 1
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "blue cube"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+WoodenBox {
+  translation -0.283348 -0.250154 0.05
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+Solid {
+  translation -0.212622 -0.452904 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "../textures/big john.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "big john cube"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.378366 0.148132 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "../textures/big john.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "big john cube(2)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.233932 0.532734 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "../textures/big john.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "big john cube(1)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation 0.110025 0.314278 0.0496076
+  rotation -0.28495253864053094 -0.04749208977309704 0.957364377931047 2.6930314721284623e-16
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "../textures/man.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "man cube"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation 0.174605 -0.053442 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.4 0.1
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "orange cube"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.572729 0.0253004 0.06
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0.08 0.04
+        }
+        texture ImageTexture {
+        }
+      }
+      geometry Box {
+        size 0.02 0.02 0.02
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.02 0.02 0.02
+  }
+  physics Physics {
+  }
+}
+Robot {
+  translation -0.522825 0.509376 0.08
+  children [
+    DistanceSensor {
+      translation 0.048 -0.005 0
+      rotation 0 0 -1 0.4
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.006 0 0
+        0.1 1000 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.048 0.005 0
+      rotation 0 0 -1 -0.4
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.006 0 0
+        0.1 1000 0
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 0.045 0
+        rotation 0.999999999996215 2.751329998684761e-06 -7.192349721398047e-09 1.5700053071795852
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0.2 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 0.045 0
+        rotation 0.999999999992715 3.3977899997968337e-06 -1.739240000372875e-06 1.5707953071795862
+        children [
+          USE Wheel
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 -0.045 0
+        rotation 0.9999998424371894 -0.00039556793767275584 0.0003983109372412174 1.5707953071795813
+        children [
+          USE Wheel
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 -0.045 0
+        rotation 0.9999998424371894 -0.0003955679376740907 0.00039831093724149245 1.570795307179579
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.1 0.08 0.015
+      }
+    }
+  ]
+  name "gentle giant"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "shitbot_testv3"
+}
+Robot {
+  translation 0.21838 -0.187939 0.18
+  children [
+    Camera {
+      translation 0.04 0 0.012
+      children [
+        DEF cameraBody Shape {
+          appearance Appearance {
+            material Material {
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      boundingObject USE cameraBody
+      physics Physics {
+      }
+      lens Lens {
+      }
+      focus Focus {
+      }
+      zoom Zoom {
+      }
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+    DistanceSensor {
+      translation 0.048 -0.005 0
+      rotation 0 0 -1 0.4
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.006 0 0
+        0.1 1000 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.048 0.005 0
+      rotation 0 0 -1 -0.4
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.006 0 0
+        0.1 1000 0
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 0.045 0
+        rotation 0.999999999996215 2.751329998684761e-06 -7.192349721398047e-09 1.5700053071795852
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0.2 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 0.045 0
+        rotation 0.999999999992715 3.3977899997968337e-06 -1.739240000372875e-06 1.5707953071795862
+        children [
+          USE Wheel
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 -0.045 0
+        rotation 0.9999998424371894 -0.00039556793767275584 0.0003983109372412174 1.5707953071795813
+        children [
+          USE Wheel
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 -0.045 0
+        rotation 0.9999998424371894 -0.0003955679376740907 0.00039831093724149245 1.570795307179579
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.1 0.08 0.015
+      }
+    }
+  ]
+  name "gentle giant camera"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "shitbotTestV4"
+}
+Robot {
+  translation -0.0592034 -0.400026 0.18
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    DistanceSensor {
+      translation 0.0236218 -0.020052 0
+      rotation 0 0 -1 0.25
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation 0.0233986 0.0210266 0
+      rotation 0 0 -1 -0.2
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.00999997 0.04 5.51747e-08
+        rotation 0.999999999996215 2.751330000569618e-06 -7.192350074808657e-09 1.5700053071795852
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0.2 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.010000000000000002 -0.04 -1.58776e-05
+        rotation 0.9999998424371894 -0.000395567937673737 0.0003983109372409033 1.5707953071795813
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.05 0.07 0.015
+      }
+    }
+  ]
+  name "LIFE IS PAIN"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "shitbot_test2"
+}
+Robot {
+  translation 0.347349 0.532308 0.27
+  rotation 0 0 1 1.5708
+  children [
+    DistanceSensor {
+      translation 0.0236218 -0.020052 0
+      rotation 0 0 -1 0.25
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation 0.0233986 0.0210266 0
+      rotation 0 0 -1 -0.2
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.00999997 0.04 5.51747e-08
+        rotation 0.999999999996215 2.751330000569618e-06 -7.192350074808657e-09 1.5700053071795852
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0.2 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.010000000000000002 -0.04 -1.58776e-05
+        rotation 0.9999998424371894 -0.000395567937673737 0.0003983109372409033 1.5707953071795813
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.05 0.07 0.015
+      }
+    }
+  ]
+  name "LIFE IS PAIN(1)"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "shitbot_test2"
+}
+Robot {
+  translation -0.549315 -0.543963 0.28
+  children [
+    DistanceSensor {
+      translation 0.0236218 -0.020052 0
+      rotation 0 0 -1 0.25
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation 0.0233986 0.0210266 0
+      rotation 0 0 -1 -0.2
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.01 0.04 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.00999997 0.04 0
+        rotation 0.999999999996215 2.751330000569618e-06 -7.192350074808657e-09 1.5700053071795852
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0.2 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.012
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.01 -0.04 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.01 -0.04 0
+        rotation 0.9999998424371894 -0.000395567937673737 0.0003983109372409033 1.5707953071795813
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.05 0.07 0.015
+      }
+    }
+  ]
+  name "mini me"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "shitbot_test2"
+}
+E-puck {
+  translation -0.564339 0.0124387 -1.55431e-15
+  rotation 0 0 1 -1.5707953071795862
+  controller "epuck_go_forward2"
+}
